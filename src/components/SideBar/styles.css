@@ -1,0 +1,65 @@
+.sideBarContainer {
+    height: 100vh;
+    width: 20vw;
+    border-right: 2px solid rgb(20, 20, 20);
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: black;
+    z-index: 1;
+}
+
+.shortcutsIcon {
+    position: relative;
+    width: 20vw;
+    height: 20vh;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    border-bottom: 2px solid rgb(50, 50, 50);
+}
+
+.shortcutsIcon ul {
+    list-style-type: none;
+}
+
+.shortcutsIcon ul li {
+    margin: 20px 0;
+    color: rgb(130, 130, 130);
+}
+
+.shortcutsIcon ul li svg {
+    margin-right: 15px;
+    transform: scale(1.25);
+}
+
+.shortcutsIcon li:hover {
+    color: white;
+    cursor: pointer;
+}
+
+.yourPlaylists {
+    position: relative;
+    width: 20vw;
+    height: 65vh;
+    
+    overflow: scroll;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.yourPlaylists ul {
+    list-style-type: none;
+}
+
+.yourPlaylists ul li {
+    margin: 20px 0;
+    color: rgb(130, 130, 130);
+}
+
+.yourPlaylists li:hover {
+    color: white;
+    cursor: pointer;
+}
