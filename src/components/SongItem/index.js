@@ -6,32 +6,32 @@ import { faPlay } from "@fortawesome/free-solid-svg-icons";
 
 library.add(faPlay)
 
-function SongItem({ title, img }) {
+function SongItem({ name, image }) {
     const [ showIcon, setShowIcon ] = useState(false)
     return (
         <div className='songContainer'
             onMouseOver = {() => setShowIcon(true)}
             onMouseOut = {() => setShowIcon(false)}
         >
-            <img src={img} alt=""></img>
+            <img src={image} alt=""></img>
             {showIcon && (<div className='playHover'>
                 <span>
                     <FontAwesomeIcon icon='play'/>
                 </span>
             </div>)}
-            <h4>{title}</h4>
+            <h4>{name}</h4>
         </div>
     )
 }
 
-function SongItemV2({ title, desc, img}) {
+function SongItemV2({ name, artist, image}) {
     const [ showIcon, setShowIcon ] = useState(false)
     return (
         <div className='songContainerV2'
             onMouseOver = {() => setShowIcon(true)}
             onMouseOut = {() => setShowIcon(false)}
         >
-            <img src={img} alt=""></img>
+            <img src={image} alt=""></img>
             {showIcon && (
             <div className='playHoverV2'>
                 <span>
@@ -39,8 +39,8 @@ function SongItemV2({ title, desc, img}) {
                 </span>
             </div>
             )}
-            <h4>{title}</h4>
-            <p>{desc}</p>
+            <h4>{name}</h4>
+            <p>{artist}</p>
         </div>
     )
 }

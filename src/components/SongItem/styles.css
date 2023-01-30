@@ -71,13 +71,13 @@ h4 {
 
 .playHoverV2 {
     position: absolute;
-    border: 1px solid white;
     width: 220px;
     height: 200px;
     display: flex;
     justify-content: flex-end;
     align-items: flex-end;
 }
+
 .playHoverV2 span {
     background-color: green;
     border-radius: 50%;
