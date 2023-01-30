@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './styles.css';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { library } from "@fortawesome/fontawesome-svg-core";
@@ -7,7 +7,9 @@ import { faPlay, faPause, faBackward, faForward, faVolumeUp} from "@fortawesome/
 library.add(faPlay, faPause, faBackward, faForward, faVolumeUp)
 
 function PlayerControl() {
-
+    
+    const [isPlaying, setIsPlaying] = useState(false);
+    
     return (
         <React.Fragment>
             <div className='playerContainer'>
@@ -21,8 +23,10 @@ function PlayerControl() {
                 <div className='playerControlsContainer'>
                     <div className='playerControls'>
                         <FontAwesomeIcon className="playerIcon" icon="backward" />
-                        <span>
-                            <FontAwesomeIcon className="playerIcon--play" icon='play'/>
+                        <span onClick={() => setIsPlaying(!isPlaying)}>
+                            <FontAwesomeIcon
+                                className={isPlaying ? "playerIcon--pause" : "playerIcon--play"}
+                                icon={isPlaying ? faPause : faPlay} />
                         </span>
                         <FontAwesomeIcon className="playerIcon" icon="forward" />
                     </div>

@@ -55,6 +55,12 @@
     margin-left: 3px;
 }
 
+.playerIcon--pause {
+    width: 20px;
+    height: 20px;
+    color: black;
+}
+
 .playerControls span:hover {
     transform: scale(1.05);
     cursor: pointer;

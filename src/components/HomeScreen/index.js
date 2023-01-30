@@ -17,6 +17,7 @@ function HomeScreen() {
             <section className="lastPlayed">
                 {songs.map(song => (
                     <SongItem
+                        key = {song.title}
                         title = {song.title}
                         band = {song.band}
                         img = {song.img}
@@ -28,6 +29,7 @@ function HomeScreen() {
                 <div className='yourSongs'>
                     {songs.slice(0,4).map(song => (
                             <SongItemV2
+                                key = {song.title}
                                 title = {song.title}
                                 desc = {song.desc}
                                 img = {song.img}
@@ -40,6 +42,7 @@ function HomeScreen() {
                 <div className="recomendations">
                     {songs.slice(0,4).map(song => (
                         <SongItemV2
+                            key = {song.title}
                             title = {song.title}
                             desc = {song.desc}
                             img = {song.img}

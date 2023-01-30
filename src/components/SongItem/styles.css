@@ -40,3 +40,61 @@ h4 {
     word-wrap: normal;
     margin: 0;
 }
+
+.playHover {
+    position: absolute;
+    width: 300px;
+    height: 100px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+.playHover span {
+    background-color: green;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 20px;
+}
+
+.playHover span:hover {
+    transform: scale(1.1);
+    filter: brightness(125%);
+}
+
+.playHover span svg {
+    margin-left: 3px;
+}
+
+.playHoverV2 {
+    position: absolute;
+    border: 1px solid white;
+    width: 220px;
+    height: 200px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+.playHoverV2 span {
+    background-color: green;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 10px;
+    margin-bottom: 20px;
+}
+
+.playHoverV2 span:hover {
+    transform: scale(1.1);
+    filter: brightness(125%);
+}
+
+.playHoverV2 span svg {
+    margin-left: 3px;
+}
