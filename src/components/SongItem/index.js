@@ -8,6 +8,7 @@ library.add(faPlay)
 
 function SongItem({ name, image }) {
     const [ showIcon, setShowIcon ] = useState(false)
+
     return (
         <div className='songContainer'
             onMouseOver = {() => setShowIcon(true)}

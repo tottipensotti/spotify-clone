@@ -58,7 +58,6 @@ function HomeScreen({ token }) {
             });
             const data = await response.json();
             const items = data.albums.items;
-            console.log(items)
             setRecomendations(items.map((item) => ({
                 'name': item.name,
                 'artist': item.artists[0].name,

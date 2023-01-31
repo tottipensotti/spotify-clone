@@ -19,6 +19,11 @@ h4 {
     color: #FFFF;
 }
 
+.songContainer:hover {
+    background: #282828;
+    transition: 0.3s ease-out;
+}
+
 .songContainerV2 {
     background-color: rgb(30, 30, 30);
     border-radius: 5px;
@@ -41,16 +46,24 @@ h4 {
     margin: 0;
 }
 
+.songContainerV2:hover {
+    background-color: #282828;
+    transition: 0.3s ease-out;
+}
+
 .playHover {
     position: absolute;
     width: 300px;
     height: 100px;
     display: flex;
     justify-content: flex-end;
+    transition: 0.3s ease-out;
     align-items: center;
 }
+
 .playHover span {
-    background-color: green;
+    background-color: #1ed760;
+    transition: 0.3s ease-out;
     border-radius: 50%;
     width: 50px;
     height: 50px;
@@ -69,8 +82,14 @@ h4 {
     margin-left: 3px;
 }
 
+h4:hover, p:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
 .playHoverV2 {
     position: absolute;
+    box-shadow: 0 8px 8px rgb(0 0 0 / 30%);
     width: 220px;
     height: 200px;
     display: flex;
@@ -79,7 +98,8 @@ h4 {
 }
 
 .playHoverV2 span {
-    background-color: green;
+    background-color: #1ed760;
+    transition: 0.3s;
     border-radius: 50%;
     width: 50px;
     height: 50px;
