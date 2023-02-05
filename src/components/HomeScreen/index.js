@@ -9,7 +9,7 @@ function HomeScreen({ token }) {
 
     useEffect(() => {
         const getAlbums = async (token) => {
-            const response = await fetch('https://api.spotify.com/v1/me/albums?limit=4', {
+            const response = await fetch('https://api.spotify.com/v1/me/albums?limit=8', {
                 headers: {
                     Authorization: `Bearer ${token}`,
                     'Content-Type': 'application/json'
@@ -50,7 +50,7 @@ function HomeScreen({ token }) {
 
     useEffect(() => {
         const getRecomendations = async (token) => {
-            const response = await fetch('https://api.spotify.com/v1/browse/new-releases?limit=4&country=AR', {
+            const response = await fetch('https://api.spotify.com/v1/browse/new-releases?limit=12&country=AR', {
                 headers: {
                     Authorization: `Bearer ${token}`,
                     'Content-Type': 'application/json'
@@ -84,7 +84,7 @@ function HomeScreen({ token }) {
             <section>
                 <h3>Some recomendations for you :)</h3>
                 <div className="recomendations">
-                    {recomendations.slice(0,4).map(recomendations => (
+                    {recomendations.map(recomendations => (
                         <SongItemV2
                             key = {recomendations.name}
                             name = {recomendations.name}

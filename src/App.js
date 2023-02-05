@@ -6,6 +6,7 @@ import { AppUI } from './AppUI';
 function App() {
   const [ token, setToken ] = useState('');
   const [ loginState, setLoginState] = useState(false);
+  
   const handleLogin = () => {
     const CLIENT_ID = process.env.REACT_APP_SPOTIFY_CLIENT_ID;
     const REDIRECT_URL = process.env.REACT_APP_SPOTIFY_REDIRECT_URL;
@@ -23,6 +24,7 @@ function App() {
     ];
     window.location.href = `${apiUrl}?client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URL}&scope=${scope.join(" ")}&response_type=token&show_dialog=true`
   }
+  
   return (
     <React.Fragment>
       {!loginState ? 
