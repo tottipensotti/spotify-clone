@@ -6,13 +6,31 @@ import { faPlay, faPause, faBackward, faForward, faVolumeUp} from "@fortawesome/
 
 library.add(faPlay, faPause, faBackward, faForward, faVolumeUp)
 
-function PlayerControl({ token }) {
+interface SongItemPlayedProps {
+    name: string;
+    artist: string;
+    album: string;
+    image: string;
+    duration: number;
+}
+
+interface PlayerControlProps {
+    token: string;
+}
+
+const PlayerControl: React.FC<PlayerControlProps> = ({ token }) => {
     
     const [ isPlaying, setIsPlaying ] = useState(false);
-    const [ recentlyPlayed, setRecentlyPlayed ] = useState([]);
+    const [ recentlyPlayed, setRecentlyPlayed ] = useState<SongItemPlayedProps>({
+        name: '',
+        artist: '',
+        album: '',
+        image: '',
+        duration: 0
+    });
 
     useEffect(() => {
-        const getRecentlyPlayed = async (token) => {
+        const getRecentlyPlayed = async (token: string) => {
             const response = await fetch('https://api.spotify.com/v1/me/player/recently-played?limit=1', {
                 headers: {
                     Authorization: `Bearer ${token}`,
@@ -21,14 +39,13 @@ function PlayerControl({ token }) {
             });
             const data = await response.json();
             const track = data.items[0].track;
-            // console.log(track);
-            setRecentlyPlayed(({
-                'name': track.album.name,
-                'artist': track.album.artists[0].name,
-                'album': track.album.name,
-                'image': track.album.images[0].url,
-                'duration': track.duration_ms
-            }))
+            setRecentlyPlayed({
+                name: track.album.name,
+                artist: track.album.artists[0].name,
+                album: track.album.name,
+                image: track.album.images[0].url,
+                duration: track.duration_ms
+            });
         };
 
         getRecentlyPlayed(token);
@@ -37,10 +54,10 @@ function PlayerControl({ token }) {
         <React.Fragment>
             <div className='playerContainer'>
                 <div className='nowPlaying'>
-                    <img src={recentlyPlayed['image']} alt=""/>
+                    <img src={recentlyPlayed.image} alt=""/>
                     <div className='songDetails'>
-                        <p className='songTitle'>{recentlyPlayed['name']}</p>
-                        <p className='bandName'>{recentlyPlayed['artist']}</p>
+                        <p className='songTitle'>{recentlyPlayed.name}</p>
+                        <p className='bandName'>{recentlyPlayed.artist}</p>
                     </div>
                 </div>
                 <div className='playerControlsContainer'>
@@ -69,6 +86,5 @@ function PlayerControl({ token }) {
         
     )
 }
-
 
 export { PlayerControl };
